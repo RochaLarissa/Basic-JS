@@ -1,0 +1,17 @@
+<meta charset = "UTF-8">
+
+<script>
+alert ("Vamos calcular quanto custa um carro com base no seu custo de fábrica?");
+
+var custoDeFabrica = prompt ("Informe o custo de fábrica do carro: ");
+custoDeFabrica = parseFloat(custoDeFabrica);
+
+var percentagemDoDistribuidor = (28/100) * custoDeFabrica;
+var impostos = (45/100) * custoDeFabrica;
+
+var custoAoConsumidor = custoDeFabrica + percentagemDoDistribuidor + impostos
+
+document.write ("O custo final do carro ao consumidor será de R$ " + custoAoConsumidor.toFixed(2) + ".");
+
+
+</script>

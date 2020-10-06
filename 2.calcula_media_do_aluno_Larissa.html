@@ -1,0 +1,22 @@
+<meta charset = "UTF-8">
+
+<script>
+
+var nome = prompt ("Olá! Qual é o seu nome? ");
+
+alert ("Bem vind@ " + nome + "!!!" + "Vamos calcular a sua média das últimas 3 provas?");
+
+var nota1 = prompt ("Informe a primeira nota: ");
+nota1 = parseFloat(nota1);
+
+var nota2 = prompt ("Informe a segunda nota: ");
+nota2 = parseFloat(nota2);
+
+var nota3 = prompt ("Informe a terceira nota: ");
+nota3 = parseFloat(nota3);
+
+var media = ((nota1 + nota2 + nota3) / 3);
+
+document.write ("A sua média é " + media.toFixed(2) + ".<br>");
+
+</script>

@@ -1,0 +1,32 @@
+<meta charset = "UTF-8">
+
+Construa um programa para ler o valor do prêmio a ser dividida e o número de
+pontos de cada um dos três primeiros colocados e imprimir a parte do prêmio em
+dinheiro que caberá a cada um:
+<br>
+<br>
+
+<script>
+
+//declaração de variaveis
+var valorDoPremio, pontosPrimeiro, pontosSegundo, pontosTerceiro, n, premio1, premio2, premio3;
+
+//entrada de dados
+valorDoPremio = parseFloat (prompt ("Informe o valor do prêmio em reais: "));
+pontosPrimeiro = parseFloat (prompt ("Informe a pontuação do primeiro colocado: "));
+pontosSegundo = parseFloat (prompt ("Informe a pontuação do segundo colocado: "));
+pontosTerceiro = parseFloat (prompt ("Informe a pontuação do terceiro colocado: "));
+
+//processamento de dados
+n = valorDoPremio / (pontosPrimeiro + pontosSegundo + pontosTerceiro)
+
+premio1 = n * pontosPrimeiro;
+premio2 = n * pontosSegundo;
+premio3 = n * pontosTerceiro;
+
+//saida de dados
+document.write("O primeiro colocado receberá R$ " + premio1.toFixed(2) + ".<br>");
+document.write("O segundo colocado receberá R$ " + premio2.toFixed(2) + ".<br>");
+document.write("O terceiro colocado receberá R$ " + premio3.toFixed(2) + ".<br>");
+
+</script>

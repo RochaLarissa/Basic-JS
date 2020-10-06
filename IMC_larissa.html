@@ -1,0 +1,21 @@
+<meta charset = "UTF-8">
+
+<script>
+
+var nome = prompt("Qual é o seu nome?");
+var peso = parseFloat(prompt ("Qual é o seu peso em Kilos?"));
+var altura = parseFloat(prompt ("Qual é a sua altura em Metros?"));
+
+var imc = peso / (altura * altura);
+
+document.write (nome + ", o seu IMC é de " + imc.toFixed(2));
+
+if (imc < 18) {
+	document.write ("<br>Você está abaixo do peso ideal!");
+				} else if (imc >= 18 && imc <= 25) {
+			document.write ("<br>Você está saudável!");	
+						} else {
+						document.write ("<br>Você está acima do peso!");
+						}
+
+</script>

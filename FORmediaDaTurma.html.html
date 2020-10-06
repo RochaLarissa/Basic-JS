@@ -1,0 +1,26 @@
+<meta charset = "UTF-8">
+
+<script>
+var qtdDeAlunos = parseInt(prompt('Escreva a quantidade de alunos da turma'));
+var notasTotal = 0;
+
+  for(var cont = 1; cont <= qtdDeAlunos; cont++)
+  {
+    var notaUm = parseFloat(prompt('Escreva a primeira nota do aluno ' + cont));
+    var notaDois = parseFloat(prompt('Escreva a segunda nota do aluno ' + cont));
+    var media = (notaUm + notaDois) / 2;
+    notasTotal += media; // notasTotal = notasTotal + media
+	
+	document.write('O aluno ' + cont + ' obteve a média ' + media + '.<br>');
+    
+	if(media >= 6)
+	{
+     document.write('Aprovado.' + '<br>');
+	}
+    else
+      document.write('Reprovado.' + '<br>');
+  }
+  
+ var mediaDaSala = notasTotal / qtdDeAlunos;
+ document.write('<br>' + 'A média da sala é: ' + mediaDaSala + ".");
+</script>

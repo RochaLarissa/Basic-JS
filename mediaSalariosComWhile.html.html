@@ -1,0 +1,22 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Fazer um programa que leia varios salarios até que seja digitado um valor zero.
+O programa deve calcular a media salarial, excluindo o ultimo valor lido
+*/
+
+var salario = parseFloat(prompt("Informe o salário: "));
+var soma = 0;
+var cont = 1;
+
+while (salario != 0)
+{
+	cont++;
+	soma = soma + salario;
+	salario = parseFloat(prompt("Informe o salário: "));
+}
+
+var media = soma / (cont - 1);
+document.write("A media dos salarios digitados foi de " + media.toFixed(2) + " reais.");
+
+</script>

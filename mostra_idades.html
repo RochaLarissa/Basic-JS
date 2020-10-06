@@ -1,0 +1,24 @@
+<script>
+
+//usando funções para pular linhas e diminuir os <br> ou <hr>
+var pulaLinha = function() {
+	document.write("<hr>")
+};
+
+var ano = 2020;
+document.write("Eu nasci em " + (ano - 28));
+pulaLinha();
+document.write("Lorena nasceu em " + (ano - 32));
+pulaLinha();
+document.write("Lourdes nasceu em " + (ano - 57));
+pulaLinha();
+
+//criando uma função que mostra frases e pula linhas
+var mostra = function(frase) {
+	document.write(frase);
+	pulaLinha
+};
+
+mostra("Usando funções para melhorar o código");
+
+</script>

@@ -1,0 +1,18 @@
+<meta charset = "UTF-8">
+
+<script>
+var nome = prompt ("Olá, vendedor! Qual é o seu nome? ");
+
+var salarioFixo = prompt ("Informe o valor do seu salário fixo: ");
+salarioFixo = parseFloat (salarioFixo);
+
+var totalDeVendas = prompt ("Informe o valor total de vendas que você realizou neste mês: ");
+totalDeVendas = parseFloat(totalDeVendas);
+
+var comissao = (15/100) * totalDeVendas;
+var salarioDoMes = salarioFixo + comissao;
+
+document.write (nome + ", o seu salário neste mês será de R$ " + salarioDoMes.toFixed(2));
+
+
+</script>
