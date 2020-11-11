@@ -1,0 +1,90 @@
+<meta charset = "UTF-8">
+
+<script>
+/*3. Em um campeonato de futebol existem cinco times e cada um possui onze jogadores. 
+Faça um programa que receba a idade, o peso e a altura de cada um dos jogadores, calcule e mostre:
+
+
+a) A quantidade de jogadores com idade inferior a 18 anos;
+b) A média das idades de jogadores de cada time;
+c) A média das alturas de todos os jogadores do campeonato;
+d) A porcentagem de jogadores com mais de 80kg entre todos os jogadores do campeonato.
+
+
+OBS.: O programa não pode ter vetores ou matrizes!*/
+
+document.write( "Larissa Pereira Rocha - 2025388 <br> Marcos Rogério dos Santos Júnior - 2020810/4<br><br>");
+
+var cont, time, idade, altura, peso, qinf18, q80kg, somaltura, somaida1, somaida2, somaida3, somaida4, somaida5;
+
+cont = 1;
+q80kg = 0;
+qinf18 = 0;
+somaltura = 0;
+somaida1 = 0;
+somaida2 = 0;
+somaida3 = 0;
+somaida4 = 0;
+somaida5 = 0;
+
+while (cont <= 55)
+	{
+		do
+		{
+			time = parseInt (prompt ("Informe o time (1 a 5):"));
+		} while (time != "1" && time != "2" && time != "3" && time != "4" && time != "5");
+
+		idade = parseInt (prompt ("Informe a idade:"));
+        altura = parseFloat (prompt("Informe a altura em metros:"));
+		peso = parseFloat (prompt("Informe o peso em Kg:"));
+
+		somaltura = somaltura + altura;
+		
+		if (idade < 18)
+			{
+				qinf18++;
+			}
+		if (peso > 80)
+			{
+				q80kg++;
+			}
+		if (time == 1)
+		    {
+				somaida1 = somaida1 + idade;
+			}
+		if (time == 2)
+		    {
+				somaida2 = somaida2 + idade;
+			}
+		if (time == 3)
+		    {
+				somaida3 = somaida3 + idade;
+			}
+		if (time == 4)
+		    {
+				somaida4 = somaida4 + idade;
+			}	
+		if (time == 5)
+		    {
+				somaida5 = somaida5 + idade;
+			}	
+		cont ++;
+	}
+
+//item A
+document.write ("A quantidade de jogadores com idade inferior a 18 anos: " + qinf18 + " jogadores.<br><br>");
+
+//item B
+document.write ("A média das idades de jogadores do time 1: " + (somaida1/11).toFixed(1) + " anos.<br>");
+document.write ("A média das idades de jogadores do time 2: " + (somaida2/11).toFixed(1) + " anos.<br>");
+document.write ("A média das idades de jogadores do time 3: " + (somaida3/11).toFixed(1) + " anos.<br>");
+document.write ("A média das idades de jogadores do time 4: " + (somaida4/11).toFixed(1) + " anos.<br>");
+document.write ("A média das idades de jogadores do time 5: " + (somaida5/11).toFixed(1) + " anos.<br><br>");
+
+//item C
+document.write ("A média das alturas de todos os jogadores do campeonato: " + (somaltura/55).toFixed(2) + " metros.<br><br>");
+
+//item D
+document.write ("O percentual de jogadores com mais de 80kg entre todos os jogadores do campeonato: " + ((q80kg/55)*100).toFixed(2) + "%.");
+
+</script>

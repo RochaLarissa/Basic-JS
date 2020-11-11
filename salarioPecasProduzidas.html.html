@@ -1,0 +1,102 @@
+<meta charset = "UTF-8">
+
+<script>
+/*2. Uma fábrica de calçados é composta por trabalhadores classificados em três
+perfis de produtividade de acordo com a quantidade de peças produzidas como
+mostra a tabela abaixo.
+Perfil de Produtividade Quantidade de peças
+produzidas
+1 Até 30
+2 De 31 a 50
+3 Acima de 50
+A classe 1 recebe salário mínimo. A classe 2 recebe salário mínimo mais 3% deste
+salário por peça, acima das 30 iniciais. A classe 3 recebe salário mínimo mais 5% desse
+salário por peça, acima das 50 iniciais.
+Faça um programa que receba o código do operário, o número de peças fabricadas no
+mês, o sexo do operário. O programa deve calcular e mostrar:
+a) O código do seu operário e o seu salário final;
+b) O total da folha de pagamento da fábrica;
+c) O número total de peças fabricado no mês;
+d) A média de peças fabricadas pelos homens;
+e) A média de peças fabricadas por mulheres
+f) O número do operário ou operária com o maior salário.
+A fábrica possui ********15******** operários.*/
+
+document.write( "Larissa Pereira Rocha - 2025388 <br> Marcos Rogério dos Santos Júnior - 2020810/4<br><br>");
+
+var codigo, pecas, sexo, salario = 0, totalFolha = 0, totalPecas = 0, somaHomens = 0, homens = 0, somaMulheres = 0, mulheres = 0, salMaisAlto = 1045, opMaisAlto = 0;
+
+for (cont = 1; cont <= 15; cont++)
+	{
+		codigo = parseInt(prompt("Informe o código do operário: "));
+		pecas = parseInt(prompt("Informe a quantidade de peças produzidas pelo operário: "));
+		sexo = prompt("Informe o sexo do operário: F ou M ");
+		
+		if (sexo == "F" || sexo == "f")
+			{
+				somaMulheres = somaMulheres + pecas;
+				mulheres++;
+			}
+			else if (sexo == "M" || sexo == "m")
+				{
+					somaHomens = somaHomens + pecas;
+					homens++;
+				}
+				else
+				{
+					while (sexo != "F" && sexo != "f" && sexo != "M" && sexo != "m")
+						{
+							sexo = prompt("Informe o sexo do operário: F ou M ");
+							if (sexo == "F" || sexo == "f")
+								{
+									somaMulheres = somaMulheres + pecas;
+									mulheres++;
+								}
+								else if (sexo == "M" || sexo == "m")
+									{
+										somaHomens = somaHomens + pecas;
+										homens++;
+									}
+						}
+				}
+		
+		
+		if (pecas < 30)
+			{
+				salario = 1045;
+			}
+			else if (pecas <= 50)
+				{
+					var pecasAcima = pecas - 30;
+					salario = 1045 + (pecasAcima * (0.03*1045));
+				}
+				else
+					{
+						var pecasAcima = pecas - 50;
+						salario = 1045 + (pecasAcima * (0.05*1045));
+					}
+		
+		document.write("Operário cód:" + codigo + " receberá R$ " + salario + ".<br>");
+		totalFolha = totalFolha + salario;
+		totalPecas = totalPecas + pecas;
+		
+		if (salario > salMaisAlto )
+			{
+				salMaisAlto = salario;
+				opMaisAlto = codigo;
+			}
+	}
+
+document.write("<br>O total da folha de pagamento da fábrica neste mês foi de R$ " + totalFolha.toFixed(2) + ".<br>");
+
+document.write("Foram fabricadas um total de " + totalPecas + " peças neste mês.<br>");
+
+document.write("A média de peças produzidas pelos homens foi de  " + Math.trunc(somaHomens/homens) + " peças neste mês.<br>");
+
+document.write("A média de peças produzidas pelas mulheres foi de  " + Math.trunc(somaMulheres/mulheres) + " peças neste mês.<br>");
+
+document.write("O operário com maior salário no mês foi o nº " + opMaisAlto + ".<br>")
+
+
+
+</script>

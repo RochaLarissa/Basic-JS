@@ -1,0 +1,51 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Questão 2:
+(3,5 pontos) Uma metalúrgica possui meta anual de produção de 100mil chapas de aço e 50mil barras de alumínio. Quando a meta de ambos os produtos é ultrapassada, o valor excedente é 
+repartido entre todos os funcionários. Quando apenas a produção das chapas é ultrapassada, o valor excedente é reduzido pela metade e repartido por todos os funcionários. Se apenas 
+a produção das barras foi ultrapassada, nada acontece. Escreva um programa que receba como entrada: quantidade de funcionários, quantidade de chapas e de barras produzidas no ano. 
+Como saída, esse algoritmo deve informar se houve ou não divisão do lucro e quanto cada funcionário recebeu. Para o cálculo do valor, considere que cada chapa rende R$5,00 e 
+cada barra R$2,50.*/
+
+var funcionarios = parseInt(prompt("Informe a quantidade de funcionários: "));
+var chapas = parseInt(prompt("Informe a quantidade de chapas produzidas no ano: "));
+var barras = parseInt(prompt("Informe a quantidade de barras produzidas no ano: "));
+
+var valorDasChapasProduzidas = chapas * 5;
+
+var valorDasBarrasProduzidas = barras * 2.5;
+
+
+if (chapas >= 100000 && barras >=50000)
+{
+var excedenteChapas = valorDasChapasProduzidas - 500000;
+var excedenteBarras = valorDasBarrasProduzidas - 125000;
+var excedente = excedenteChapas + excedenteBarras;
+var valorPorFuncionario = excedente / funcionarios;
+
+document.write("A meta de produção de chapas de aço e de barras de alumínio foi BATIDA!<br>Haverá distribuição de lucro no valor de " 
++ valorPorFuncionario + " reais por funcionário!");
+
+} else if (chapas >= 100000 && barras < 50000)
+{
+var excedenteChapas = valorDasChapasProduzidas - 500000;
+var valorPorFuncionario = (excedenteChapas/2) / funcionarios;
+
+document.write("Apenas a meta de produção de chapas de aço foi batida!<br>Haverá distribuição de lucro no valor de " 
++ valorPorFuncionario + " reais por funcionário!");
+
+} else if (chapas < 100000 && barras >= 50000)
+{
+document.write("Apenas a meta de produção de barras de alumínio foi batida.<br>Não haverá distribuição de lucro este ano.");	
+
+} else 
+{
+document.write("Nenhuma meta foi batida.<br>Não haverá distribuição de lucro este ano.");
+}
+	
+
+
+
+
+</script>

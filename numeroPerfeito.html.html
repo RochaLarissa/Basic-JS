@@ -1,0 +1,41 @@
+<meta charset = "UTF-8">
+
+
+<script>
+/*Faça um Programa JavaScript que verifique se um valor é perfeito ou não. Um
+valor é dito perfeito quando ele é igual a soma dos seus divisores, excetuando
+ele próprio. (Ex: 6 é perfeito, 6 = 1 + 2 + 3, que são seus divisores). Implemente
+a função perfeito(n) que retorne 1 se o valor for perfeito e 0 caso contrário.*/
+
+document.write( "Larissa Pereira Rocha - 2025388 <br> Marcos Rogério dos Santos Júnior - 2020810/4<br><br>");
+
+function perfeito(numero)
+	{
+		var contador;
+		var somaDivisores = 0;
+		document.write("Divisores: ");
+		
+		for (contador = 1 ; contador < numero ; contador++)
+		{
+			if (numero%contador == 0)
+				{
+					document.write(contador + "&nbsp&nbsp");
+					somaDivisores = somaDivisores + contador;
+				}
+		}
+		
+		if (somaDivisores == numero && somaDivisores != 0)
+			{
+				document.write("<br><br>(1) " + numero + " é um número perfeito!!!!<br>")
+			}
+		else 
+			{
+				document.write("<br><br>(0) " + numero + " NÃO é um número perfeito.<br>")
+			}
+	}
+
+var numero = parseInt(prompt("Informe um número para verificar se ele é perfeito: "));
+perfeito(numero);
+
+
+</script>

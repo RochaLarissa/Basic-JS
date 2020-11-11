@@ -1,0 +1,27 @@
+<meta charset = "UTF-8">
+
+<script>
+/* Questão 1:
+(3 pontos) Sabe-se que, para iluminar de maneira correta os cômodos de uma casa, para cada
+m2 , deve-se usar 18 W de potência. Faça um programa que receba as duas dimensões de um
+cômodo (em metros), calcule e mostre a sua área (em m2 ) e a potência de iluminação que deverá
+ser utilizada. O programa deverá calcular ainda quantas lâmpadas de 6W deverão ser necessárias
+para iluminar todo o espaço.*/
+
+var comprimento = parseFloat(prompt("Digite o comprimento do cômodo: "));
+var largura = parseFloat(prompt("Digite a largura do cômodo: "));
+
+var area = comprimento * largura;
+
+var potencia = area * 18;
+
+var numeroDeLampadas = potencia / 6
+
+document.write("A área do cômodo é de " + area.toFixed(1) + " m².<br>");
+
+document.write("A potência de iluminação necessária para o cômodo é de " + potencia.toFixed(1) + " Watts.<br>");
+
+document.write("Serão necessárias " + Math.round(numeroDeLampadas) + " lâmpadas de 6 W de potência cada.");
+
+
+</script>
