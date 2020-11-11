@@ -1,0 +1,30 @@
+<meta charset = "UTF-8">
+
+<input type="text" id="numero" />
+
+<input type="submit" id="adivinhar" 
+	value="Compare com o número que estou pensando!" />
+
+<script>
+var segredo = Math.round(Math.random() * 100);
+
+var caixaDoNumero = document.getElementById("numero");
+
+var botaoClicado = function ()
+{
+	if (segredo == caixaDoNumero.value)
+	{
+		alert ("Parabéns! Você acertou o número secreto!");
+	}
+	else 
+	{
+		alert ("Infelizmente você errou! O número que eu pensei era " + segredo + "!");
+	}
+}
+
+var botaoAdivinhar = document.getElementById("adivinhar");
+botaoAdivinhar.onclick = botaoClicado;
+
+caixaDoNumero.value = "";
+</script>
+

@@ -1,0 +1,37 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Escreva um programa que, dado valor N, calcule 
+S = 1! + 2! + 3! + ... + N!*/
+
+function fat (x)
+	{
+		var prod, cont1;
+		prod = 1;
+		cont1 = 0;
+		while (cont1 < x)
+			{
+				cont1++;
+				prod = prod * cont1;
+			}
+		return prod;
+	}
+
+var N, cont, soma;
+N = parseInt(prompt("Informe o número de termos:"));
+cont = 0;
+soma = 0;
+document.write("S = ");
+
+while (cont < N)
+	{
+		cont++;
+		document.write(cont + "! + ");
+		soma = soma + fat(cont);
+	} 
+	
+	
+document.write("<br>Somatório = " + soma);
+
+
+</script>

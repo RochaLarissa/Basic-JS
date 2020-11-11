@@ -1,0 +1,66 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Escrever um algoritmo que lê um número não determinado de valores para m, todos inteiros e positivos,
+ um de cada vez. Se m for par, verificar quantos divisores possui e escrever esta informação.
+ Se m for impar e menor do que 10 calcular e escrever o fatorial de m. Se m for impar e maior 
+ ou igual a 10 calcular e escrever a soma dos inteiros de 1 até m. O programa deve parar quando for
+ lido o valor 0.*/
+
+function fatorial (x)
+	{
+		var fat = 1;
+		for (cont=1; cont <= x; cont ++)
+			{
+				fat = fat * cont;
+			}
+		return fat;
+	}
+ 
+ 
+var m, soma = 0;
+m = parseInt(prompt("Informe um número inteiro: "));
+
+while (m != 0)
+	{
+		 if (m%2==0)
+			{
+				document.write("<br>" + m + " é par e seus divisores são ")
+				for (cont = 1 ; cont <= m ; cont++)
+					{
+						if (m%cont == 0)
+							{
+								document.write(cont + "  ");
+							}
+					}
+			} 
+			
+			else 
+				{
+					
+					if (m < 10)
+						{
+							fatorial(m)
+							document.write("<br>" + m + " é ímpar e menor que 10. O resultado de " + m + "! é igual a " + fatorial(m) + "<br>");
+						}
+						
+					else
+						{
+						document.write("<br>" + m + " é ímpar e maior que 10. A soma dos inteiros de 1 até " + m + " é igual a ");	
+						for (cont = 1; cont <= m ; cont++)
+							{
+								soma = soma + cont;
+								document.write(cont + " + ");
+							}
+						document.write(" = " + soma.toFixed(2) + "<br>")
+						}
+				} 
+		m = parseInt(prompt("Informe um número inteiro: "));
+	}
+ 
+ 
+ 
+ 
+ 
+ </script>
+ 

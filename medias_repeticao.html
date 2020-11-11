@@ -1,0 +1,41 @@
+<meta charset = "UTF-8">
+<script>
+/*A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dados sobre o salário e número de filhos. A prefeitura deseja saber:
+a) média do salário da população;
+b) média do número de filhos;
+c) maior salário;
+d) percentual de pessoas com salário até R$100,00.
+O final da leitura de dados se dará com a entrada de um salário negativo.
+Faça um programa que leia os dados de interesse e apresente as informações que a prefeitura deseja saber.*/
+
+var salario = 1, somaSalario = 0, filhos = 0, somaFilhos = 0, maiorSalario = 0, habitantes = 0, peqSalario = 0;
+
+salario = parseFloat(prompt("Informe o salario: "));
+
+while (salario >= 0)
+{
+	filhos = parseFloat(prompt("Informe a quantidade de filhos: "));
+	
+	somaFilhos = somaFilhos + filhos;
+	somaSalario = somaSalario + salario;
+	habitantes++;
+		
+		if (salario > maiorSalario)
+		{
+		maiorSalario = salario;
+		}
+
+		if (salario <= 100)
+		{
+		peqSalario++;
+		}
+	
+	salario = parseFloat(prompt("Informe o salario: "));
+} 
+
+document.write ("A média salarial da população é de R$ " + (somaSalario/habitantes).toFixed(2) + ".<br>");
+document.write ("A média do numero de filhos entre a população é de " + (somaFilhos/habitantes).toFixed(1) + " filhos.<br>");
+document.write ("O maior salário entre a população é de R$ " + maiorSalario.toFixed(2) + ".<br>");
+document.write (((peqSalario/habitantes)*100).toFixed(1) + "% das pessoas recebem salário de até R$ 100.");
+
+</script>

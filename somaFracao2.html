@@ -1,0 +1,25 @@
+<meta charset = "UTF-8">
+
+
+<script>
+
+/*Escreva um algoritmo que lê um valor n inteiro e positivo e que calcula a seguinte soma: 
+S := 1 + 1/2 + 1/3 + 1/4 + ... + 1/n
+O algoritmo deve escrever cada termo gerado e o valor final de S.*/
+
+var qtdTermos, soma, contador;
+
+qtdTermos = parseFloat(prompt("Informe a quantidade de termos: "));
+contador = 0;
+soma = 0;
+
+while (contador < qtdTermos)
+	{
+		soma = soma + (1/(contador + 1));
+		document.write(" 1/" + (contador+1) + " + ");
+		contador++;
+	}
+
+document.write("<br>O somatório é " + soma.toFixed(3));
+
+</script>

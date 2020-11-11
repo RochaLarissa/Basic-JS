@@ -1,0 +1,78 @@
+<meta charset = "UTF-8">
+
+<script>
+var codCidade, estado, nVeiculos, nAcidentes, N, maiorNumeroAcidentes, maiorCodCidade, menorNumeroAcidentes,
+	menorCodCidade, somaVeiculos, somaAcidentesRs, qtdRs;
+
+N = 1;
+
+codCidade = parseInt(prompt("Informe o código da cidade (ex: 001, 002... 200): "));
+estado = prompt("Informe o Estado (ex:RS, SC, PR...): ");
+nVeiculos = parseInt(prompt("Informe o número de veículos de passeio em 2019: "));
+nAcidentes = parseInt(prompt("Informe o número de acidentes de trânsito com vítimas em 2019: "));
+
+maiorNumeroAcidentes = 0;
+maiorCodCidade = 0;
+menorNumeroAcidentes = nAcidentes;
+menorCodCidade = 0;
+somaVeiculos = 0;
+somaAcidentesRs = 0;
+qtdRs = 0;
+
+if (nAcidentes > maiorNumeroAcidentes)
+	{
+		maiorNumeroAcidentes = nAcidentes;
+		maiorCodCidade = codCidade;
+	}
+		
+if (nAcidentes < menorNumeroAcidentes)
+	{
+		menorNumeroAcidentes = nAcidentes;
+		menorCodCidade = codCidade;
+	}
+		
+if(estado == "RS")
+	{
+		somaAcidentesRs = somaAcidentesRs + nAcidentes;
+		qtdRs++;
+	}
+
+		somaVeiculos = somaVeiculos + nVeiculos	
+
+while (N < 200)
+	{
+		codCidade = parseInt(prompt("Informe o código da cidade (ex: 001, 002... 200): "));
+		estado = prompt("Informe o Estado (ex:RS, SC, PR...): ");
+		nVeiculos = parseInt(prompt("Informe o número de veículos de passeio em 2019: "));
+		nAcidentes = parseInt(prompt("Informe o número de acidentes de trânsito com vítimas em 2019: "));
+		
+		if (nAcidentes > maiorNumeroAcidentes)
+			{
+				maiorNumeroAcidentes = nAcidentes;
+				maiorCodCidade = codCidade;
+			}
+		
+		if (nAcidentes < menorNumeroAcidentes)
+			{
+				menorNumeroAcidentes = nAcidentes;
+				menorCodCidade = codCidade;
+			}
+		
+		if(estado == "RS")
+			{
+			somaAcidentesRs = somaAcidentesRs + nAcidentes;
+			qtdRs++;
+			}
+
+		somaVeiculos = somaVeiculos + nVeiculos	
+		
+		N++;
+		
+	}
+
+document.write("O maior indice de acidentes de transito foi de " + maiorNumeroAcidentes + " na cidade " + maiorCodCidade + ".<br>");
+document.write("O menor indice de acidentes de transito foi de " + menorNumeroAcidentes + " na cidade " + menorCodCidade + ".<br>");
+document.write("A média de veículos das cidades brasileiras é de " + (somaVeiculos/200).toFixed(2) + ".<br>");
+document.write("A média de acidentes com vítimas entre as cidades do Rio Grande do Sul é de " + (somaAcidentesRs/qtdRs).toFixed(2) + ".<br>");
+
+</script>

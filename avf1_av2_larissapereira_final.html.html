@@ -1,0 +1,50 @@
+<meta charset = "UTF-8">
+
+<script>
+
+/*Foi feita uma pesquisa entre os *****1000****** habitantes de uma região para coletar os
+seguintes dados: sexo (0-feminino, 1-masculino), idade e altura. Faça um programa
+que leia as informações coletadas e mostre as seguintes informações:
+a) média da idade do grupo;
+b) média da altura das mulheres;
+c) média da idade dos homens;
+d) percentual de pessoas com idade entre 18 e 35 anos (inclusive).*/
+
+var sexo, idade, somaIdade = 0, somaIdadeHomens = 0, altura, somaAlturaMulheres = 0, adultosJovens = 0, habitantes, homens = 0, mulheres = 0;
+
+
+for ( habitantes = 1 ; habitantes < 1001 ; habitantes++)
+{
+	sexo = parseInt(prompt("Informe o sexo do " + habitantes + "° entrevistado: 0-feminino, 1-masculino "));
+	idade = parseInt(prompt("Informe a idade do " + habitantes + "° entrevistado: "));
+	altura = parseFloat(prompt("Informe a altura do " + habitantes + "° entrevistado em metros: "));
+	
+	somaIdade = somaIdade + idade;
+
+	if (sexo == 0)
+	{
+		somaAlturaMulheres = somaAlturaMulheres + altura;
+		mulheres++;
+	}
+	
+	if (sexo == 1)
+	{
+		somaIdadeHomens = somaIdadeHomens + idade;
+		homens++;
+	}
+	
+	if (idade >= 18 && idade <= 35)
+	{
+		adultosJovens++;
+	}
+}
+
+habitantes--;
+
+document.write("A média da idade do grupo é de " + (somaIdade/habitantes).toFixed(1) + " anos.<br>");
+document.write("A média da altura das mulheres é de " + (somaAlturaMulheres/mulheres).toFixed(1) + " metros.<br>");
+document.write("A média da idade dos homens é de " + (somaIdadeHomens/homens).toFixed(1) + " anos.<br>");
+document.write((adultosJovens/habitantes)*100 + "% é o percentual de pessoas com idade entre 18 e 35 anos (inclusive).");
+
+
+</script>

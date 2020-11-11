@@ -1,0 +1,44 @@
+<meta charset = "UTF-8">
+
+<script>
+/*
+Fazer um programa que leia a idade e o sexo de várias pessoas
+até que seja lida uma idade negativa. O programa deve garantir
+que só sejam lidos M para masculino e F para feminino. O 
+programa deve calcular e informar quantos homens foram 
+entrevistados com mais de 45 anos e quantas mulheres foram
+entrevistadas com menos de 60 anos.
+*/
+
+var idade, sexo, contM45 = 0, contF60 = 0;
+
+do {
+		idade = parseInt(prompt("Informe a idade do participante:"));
+		do {
+			sexo = prompt("Informe o sexo do participante: F ou M?");
+			} while (sexo != "M" && sexo != "F");
+	
+		if (sexo == "M")
+			{
+				if (idade > 45)
+					{
+					contM45++;
+					}
+			} 
+			
+			else 
+				{
+					if (idade < 60)
+					{
+						contF60++;
+					}
+				}
+	
+	} while (idade > 0);
+
+document.write("Foram entrevistados " + contM45 + " homens acima de 45 anos de idade. <br>")
+document.write("Foram entrevistadas " + contF60 + " mulheres abaixo de 60 anos de idade. <br>");
+
+
+
+</script>

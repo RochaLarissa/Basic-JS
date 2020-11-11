@@ -1,0 +1,22 @@
+<meta charset = "UTF-8">
+<script>
+/*Dado um número N, calcule S = 1+2+3+4+...+N*/
+
+var N, cont, soma;
+
+N = parseInt(prompt("Informe o valor de N: "));
+cont = 0;
+soma = 0;
+document.write("S = ");
+
+while (cont < N)
+{
+	cont++;
+	document.write(cont + " + ");
+	soma = soma + cont;
+}
+
+document.write("<br>Somatório = " + soma);
+	
+
+</script>

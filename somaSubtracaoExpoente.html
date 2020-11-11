@@ -1,0 +1,61 @@
+Escreva um programa que solicite x e N e calcule e apresente
+S = x¹/1! - x²/2! + x³/3! + ... + x^N/N!<br>
+<meta charset = "UTF-8">
+
+<script>
+function fat (x)
+	{
+		var prod, cont1;
+		prod = 1;
+		cont1 = 0;
+		while (cont1 < x)
+			{
+				cont1++;
+				prod = prod * cont1;
+			}
+		return prod;
+	}
+
+var cont, x, N, soma;
+cont = 0;
+soma = 0;
+x = parseFloat(prompt("Informe o valor de x: "));
+N = parseFloat(prompt("Informe o valor de N: "));
+
+while (cont < N)
+	{
+		cont++;
+		if (cont%2 != 0) //cont impar
+			{
+				soma = soma + (Math.pow(x, cont)/fat(cont));	
+			}
+		else //cont par
+			{
+				soma = soma - (Math.pow(x, cont)/fat(cont));
+			}
+	}
+
+document.write("O resultado é " + soma.toFixed(3));
+
+/*
+OU
+
+var N, soma, cont, mult, num, den, x;
+soma = 0;
+cont = 0;
+mult = 1;
+N = parseInt(prompt("Informe o número de termos."));
+x = parseInt(prompt("Informe o número x"));
+while (cont < N)
+	{
+		cont++;
+		num = Math.pow(x,cont);
+den = fat (cont);
+		soma = soma + mult*(num/den);
+		mult = mult * (-1);
+	}
+document.write("Somatório = "+soma.toFixed(3));
+
+*/
+</script>
+

@@ -1,0 +1,26 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Dado um valor N, escrever um programa que seja capaz de apresentar
+os N primeiros valores da sequência de Fibonacci. Os valores iniciais
+da sequência 0 e 1 são fornecidos*/
+
+var a, b, c, cont, N;
+cont = 2;
+a = 0;
+b = 1;
+c = a + b;
+N = parseInt(prompt("Informe a quantidade de termos: "));
+document.write(a + "&nbsp;&nbsp;" + b + "&nbsp;&nbsp;");
+
+while (cont < N)
+{ 
+a = b;
+b = c;
+c = a + b;
+document.write(c + "&nbsp;&nbsp;");
+cont++;
+}
+
+
+</script>

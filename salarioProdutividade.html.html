@@ -1,0 +1,46 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Questão 2: (4 pontos)
+Uma determinada empresa possui *******100 funcionários******* e fabrica peças de alto valor agregado. Ao
+final do mês, é informado a quantidade de peças que cada funcionário produziu para que seja
+então calculado o seu salário. Faça um programa em JavaScript que realize o seguinte processamento para cada funcionário:
+a) Leia a quantidade de peças que ele produziu; 
+2
+b) Calcule o salário dele, sabendo que o cálculo é feito da seguinte forma:
+Salário mínimo de R$ 1.000,00 e acréscimo de 5% incidindo no salário mínimo por cada
+peça produzida.
+c) O valor total da folha de pagamento e a quantidade de peças produzidas.
+d) O percentual de funcionários que recebem mais que 4 e menos que 10 salários-mínimos.
+OBSERVAÇÕES:
+➔ O cálculo do percentual deverá ser feito por função. */
+
+function salario (pecas)
+	{
+		var salFinal = 1000 + ((1000*0.05)*pecas);
+		return salFinal
+	}
+
+var npecas, totFolha = 0, totPecas = 0, funcEsp = 0;
+
+for (var func = 1; func <= 100 ; func++)
+	{
+		npecas = parseInt(prompt("Informe a quantidade de peças que o funcionário " + func + " produziu: "));
+		document.write("O salário final do funcionário " + func + " foi de R$ " + salario(npecas) + ".<br>");
+		totFolha = totFolha + salario(npecas);
+		totPecas = totPecas + npecas;
+		
+		if (salario(npecas) > 4000 && salario(npecas) < 10000)
+			{
+				funcEsp++;
+			}
+	}
+
+document.write("O valor total da folha de pagamento foi R$ " + totFolha + ".<br>");
+document.write("A quantidade total de peças produzidas foi de " + totPecas + ".<br>");
+document.write("O percentual de funcionários que recebem mais que 4 e menos que 10 salários-mínimos é de " + funcEsp + "%.<br>");
+
+
+
+
+</script>

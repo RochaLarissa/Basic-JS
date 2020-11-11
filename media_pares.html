@@ -1,0 +1,25 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Escreva um programa que calcule a média dos números digitados pelo usuário, se eles forem pares.
+ Termine a leitura se o usuário digitar zero*/
+
+var numero = parseFloat(prompt("Infome um número: "));
+var somaPares = 0;
+var qtdPares = 0;
+
+while (numero > 0)
+{
+	if(numero%2 == 0)
+	{
+		somaPares = somaPares + numero;
+		qtdPares++;
+	}
+	
+	numero = parseFloat(prompt("Infome um número: "));
+}
+
+var media = somaPares/qtdPares ;
+document.write("A média dos números pares digitados foi de " + media.toFixed(2) + ".");
+
+</script>

@@ -1,0 +1,38 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Faça um programa que leia várias notas até que seja lançada uma nota nula.
+O programa deve garantir que as notas lidas sejam validas, ou seja, entre 0 e 10.
+O programa deve apresentar a média das notas lidas.
+*/
+
+var cont = 1;
+var notaAlunos = parseFloat(prompt("Escreva a a nota do aluno " + cont));
+var soma = 0;
+
+while (notaAlunos < 0 || notaAlunos > 10)
+	{
+	alert("Nota digitada inválida.");
+	notaAlunos = parseFloat(prompt("Escreva a a nota do aluno " + cont));
+	}
+
+while (notaAlunos != 0)
+	{
+	
+	soma = soma + notaAlunos;
+	cont++;
+	notaAlunos = parseFloat(prompt("Escreva a a nota do aluno " + cont));
+	
+	while (notaAlunos < 0 || notaAlunos > 10)
+		{
+			alert("Nota digitada inválida.");
+			notaAlunos = parseFloat(prompt("Escreva a a nota do aluno " + cont));
+		}
+	}
+
+cont--;
+var media = soma / cont;
+document.write("A média das notas digitadas foi " + media.toFixed(2));
+
+
+</script>

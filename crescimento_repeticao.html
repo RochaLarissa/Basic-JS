@@ -1,0 +1,23 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Chico tem 1,50 metro e cresce 2 centímetros por ano, enquanto Zé tem 1,10 metro
+e cresce 3 centímetros por ano. Construa um programa que calcule e imprima quantos anos 
+serão necessários para que Zé seja maior que Chico.*/
+
+var alturaChico, alturaZe, anos;
+
+alturaChico = 1.5;
+alturaZe = 1.1;
+anos = 0;
+
+while(alturaChico >= alturaZe)
+	{
+	anos++;
+	alturaChico = alturaChico + 0.02;
+	alturaZe = alturaZe + 0.03;
+	}
+
+document.write("Levará " + anos + " anos para que Zé seja maior do que Chico.");
+
+</script>

@@ -1,0 +1,64 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Questão 1: (6 pontos)
+O valor do Imposto de Renda mensal é calculado segundo a tabela progressiva abaixo:
+Salário Líquido (SL) % Desconto
+até 1.164,00 Isento -
+de 1.164,01 a 2.326,00 15,0 174,60
+acima de 2.326,00 27,5 465,35
+Construa um programa que:
+a) Leia o salário bruto (SB) e o número de dependentes (ND) de N funcionários até que
+seja lido um salário menor ou igual a zero;
+
+b) Calcule o salário líquido (SL) de cada funcionário, de acordo com a seguinte fórmula:
+SL = SB – (ND * 117);
+
+c) Calcule e exiba o valor do imposto de renda (IR) a ser pago por cada funcionário,
+considerando o salário líquido quando da aplicação da tabela progressiva acima.
+IR = (SL * %) - Desconto
+
+d) Calcule e exiba o total de funcionários, o salário bruto médio, o salário líquido médio e
+o imposto a ser pago por todos os funcionários.*/
+
+var sb = 1, sl, nd, nf = 0, ir, sbMed = 0, slMed = 0, irTot = 0;
+
+while(sb > 0)
+	{
+		nf++;
+		sb = parseFloat(prompt("Informe o salário bruto do funcionário: " + nf));
+		
+		if (sb >= 0)
+			{
+				nd = parseInt(prompt("Informe o número de dependentes do funcionário: " + nf));
+				
+				sl = sb - (nd * 117);
+				if (sl <= 1164) 
+					{
+						document.write("O funcionário " + nf + " está isento do pagamento de Imposto de Renda.<br>");
+					}
+					else if (sl <= 2326)
+						{
+							ir = (0.15 * sl) - 174.6;
+							document.write("O funcionário " + nf + " pagará R$ " + ir.toFixed(2) + " de imposto de renda.<br>");
+							irTot = irTot + ir;
+						}
+						else
+						{
+							ir = (0.275 * sl) - 465.35;
+							document.write("O funcionário " + nf + " pagará R$ " + ir.toFixed(2) + " de imposto de renda.<br>");
+							irTot = irTot + ir;
+						}
+				sbMed = sbMed + sb;
+				slMed = slMed + sl;
+			}
+	}
+ 
+nf--;
+document.write("O total de funcionários é igual a " + nf + ". <br>");
+document.write("O salário bruto médio é igual a R$ " + (sbMed/nf).toFixed(2) + ". <br>");
+document.write("O salário líquido médio é igual a R$ " + (slMed/nf).toFixed(2) + ". <br>");
+document.write("O Imposto de Renda a ser pago pelo total de funcionários é igual a R$ " + irTot.toFixed(2) + ".<br>");
+ 
+
+</script>

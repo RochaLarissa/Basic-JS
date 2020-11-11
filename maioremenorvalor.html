@@ -1,0 +1,32 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Escreva um programa que leia 50 valores e encontre o maior e o menor deles. Mostre o resultado.*/
+
+var valor, ordem = 1, maior, menor;
+
+valor = parseFloat(prompt("Digite o " + ordem + "º valor: "));
+maior = valor;
+menor = valor;
+
+while (ordem < 50)
+{
+	ordem++;
+
+	valor = parseFloat(prompt("Digite o " + ordem + "º valor: "));
+
+	if (valor >= maior)
+	{
+		maior = valor;
+	}
+	
+	if (valor <= menor)
+	{
+		menor = valor;
+	}
+}
+
+document.write("O maior valor digitado foi: " + maior + ".<br>");
+document.write("O menor valor digitado foi: " + menor + ".<br>");
+
+</script>

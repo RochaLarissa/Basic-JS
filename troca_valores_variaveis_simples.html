@@ -1,0 +1,24 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Fazer um programa que leia 3 variáveis, a, b, c
+O programa deve apresentar os valores de a, b e c antes e depois da troca.
+a troca deve ser da seguinte forma: 
+a -> c
+c -> b
+b -> a*/
+
+var a = prompt("Informe um valor para A: ");
+var b = prompt("Informe um valor para B: ");
+var c = prompt("Informe um valor para C: ");
+
+document.write("Os valores informados foram: A[ " + a + " ] B[ " + b + " ] C[ " + c + " ].<br>");
+
+var temp = a;
+a = b;
+b = c;
+c = temp;
+
+document.write("Os valores após a troca ficaram: A[ " + a + " ] B[ " + b + " ] C[ " + c + " ].");
+
+</script>
