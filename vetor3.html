@@ -1,0 +1,23 @@
+<meta charset = "UTF-8">
+<script>
+/*Escrever um programa que leia um vetor de 10 posições. O programa deve apresentar o vetor na 
+ordem direta e na ordem inversa*/
+
+var a, vetor = new Array(9), inverso = new Array(9), a = 8;
+
+for (i = 0; i < 9; i++)
+	{
+		vetor[i] = prompt("Informe o dado a ser armazenado no vetor ["+i+"]:");
+		document.write(vetor[i] + "&nbsp&nbsp");
+	}
+
+document.write("<br>");
+
+for (i = 0; i < 9; i++ )
+	{
+		inverso[i] = vetor[a];
+		document.write(inverso[i] + "&nbsp&nbsp");
+		a--;
+	}
+
+</script>

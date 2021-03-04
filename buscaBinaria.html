@@ -1,0 +1,30 @@
+<meta charset = "UTF-8">
+<script>
+var v = [10, 12, 20, 23, 27, 30, 31, 39, 42, 44, 45, 49, 57, 63, 70];
+var inicio = 0;
+var fim = v.length - 1;
+alert("O valor inicial para fim: "+fim);
+var meio;
+var x = prompt("Informe o número a ser pesquisado:");
+while (inicio <= fim) {
+    meio = Math.floor((inicio + fim)/2);
+	alert("Valor da variável meio:"+meio);
+    if (x == v[meio]) {
+        break;
+    }
+if (x > v[meio]) {
+        inicio = meio + 1;
+		alert("Novo valor de início: "+inicio);
+    }
+    if (x < v[meio]) {
+        fim = meio - 1;
+		alert("Novo valor de fim: "+fim);
+    }
+}
+if (x == v[meio]) {
+    document.write("O número " + x + " está na posição " + meio);
+}
+else {
+    document.write("O número " + x + " não está no vetor.");
+}
+</script>

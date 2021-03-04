@@ -1,0 +1,31 @@
+<meta charset = "UTF-8">
+<script>
+//declaração de vetores
+var a = [], b = new Array (5), i;
+
+//alimentação dos vetores
+//atribuição
+b[0] = 4;
+b[1] = 14;
+b[2] = 32;
+b[3] = 87;
+b[4] = 64;
+//solicitando os dados ao usuário
+for (i = 0; i < 5; i++)
+	{
+		a[i] = prompt("Informe o dado A["+i+"]:");
+	}
+//gerando o vetor de forma aleatória
+for (i = 5; i < 10; i++)
+	{
+		a[i] = Math.trunc(Math.random()*60);
+	}
+
+//apresentação do vetor
+document.write("Vetor B = "+b+"<br>");
+document.write("Vetor A<br>");
+for (i = 0; i < a.length;i++ )
+	{
+		document.write(a[i]+"&nbsp;&nbsp;");
+	}
+</script>

@@ -1,0 +1,34 @@
+<meta charset = "UTF-8">
+<script>
+/*Escrever um programa que leia um vetor com o nome de 10 alunos e outro vetor com a nota 
+desses alunos. O programa deve calcular e apresentar a média da turma, o aluno com a maior
+ nota e o aluno com a menor nota.*/
+
+var nome = [], nota = [], media = 0, maiorNota = 0, menorNota = 10, nomeMaiorNota, nomeMenorNota;
+
+for(var i = 0; i<10; i++)
+	{
+		nome[i] = prompt("Informe o nome do aluno " + (i+1) + ".");
+		nota[i] = parseFloat(prompt("Informe a nota do aluno " + (i+1) + "."));
+		media = media + nota[i];
+		
+		if (nota[i] >= maiorNota)
+			{
+				maiorNota = nota[i];
+				nomeMaiorNota = nome[i];
+			}
+			
+		if (nota[i] <= menorNota)
+			{
+				menorNota = nota[i];
+				nomeMenorNota = nome[i];
+			}
+	}
+
+
+
+document.write("A média da turma foi: " + (media/10).toFixed(2) + ".<br>");
+document.write("O aluno com a maior nota foi: " + nomeMaiorNota + ".<br>");
+document.write("O aluno com a menor nota foi: " + nomeMenorNota + ".<br>");
+
+</script>

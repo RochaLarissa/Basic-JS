@@ -1,0 +1,50 @@
+<meta charset = "UTF-8">
+<script>
+/*Uma determinada empresa possui 3 depósitos nos quais armazena 3 produtos. Faça um programa que construa uma matriz
+ com as informações de estoque de cada produto em cada depósito.  O programa deve indicar o produto com menor
+ estoque em cada depósito e o produto com maior estoque em cada depósito.*/
+
+
+//criando a matriz 
+var d, p, maior, menor, estoque = new Array(3);
+for (d = 0; d < 3; d++)
+	{
+		estoque[d] = new Array(3);
+	}
+	
+//alimentar a matriz
+for (d = 0; d < 3; i++)
+	{
+		for (p = 0; p < 3; p++)
+			{
+				estoque[d][p] = parseInt(prompt("Informe a quantidade de produto [" + p + "] há no depósito [" + d + "]="));
+			}
+	}
+	
+//apresentar a matriz
+for (d = 0; d < 3; d++)
+	{
+		maior = estoque[d][0];
+		menor = estoque [d][0];
+		prodMaior = 0;
+		prodMenor = 0;
+		for(p = 0; p < 3; p++)
+			{
+				if (maior < estoque[d][p])
+					{
+						maior = estoque[d][p];
+						prodMaior = p;
+					}
+				if (menor > estoque[d][p])
+					{
+						menor = estoque[d][p];
+						prodMenor = p;
+					}
+			}
+		document.write("O produto com maior estoque no depósito" + d + " é o produto " + prodMaior);
+		document.write("O produto com menor estoque no depósito" + d + " é o produto " + prodMenor);
+	}
+
+ 
+ 
+ </script>

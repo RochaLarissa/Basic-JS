@@ -1,0 +1,49 @@
+<meta charset = "UTF-8">
+<script>
+
+/*Escrever um programa que leia uma matriz 4x4. O programa deve apresentar a matriz, 
+calcular e apresentar a soma dos elementos pares da matriz*/
+
+var i, j, mat = new Array(4), soma=0;
+//criando a matriz
+for (i = 0; i < 4; i++)
+	{
+		mat[i] = new Array(4);
+	}
+
+//alimentar a matriz
+for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+			{
+				mat[i][j] = parseInt(prompt("Informe o elemento M["+i+"]["+j+"]="));
+			}
+	}
+//apresentar a matriz
+for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+			{
+				document.write(mat[i][j]+"&nbsp;&nbsp;&nbsp");
+			}
+		document.write("<br><br>");
+	}
+
+document.write("Soma = ");
+//calculando a soma dos elementos pares da matriz
+for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+			{
+				if((mat[i][j])%2 == 0)
+					{
+						soma = soma + mat[i][j];
+						document.write(mat[i][j] + " + ");
+					}
+			}
+	}
+document.write("<br> Resultado: " + soma);
+
+
+
+</script>

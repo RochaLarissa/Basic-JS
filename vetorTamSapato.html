@@ -1,0 +1,37 @@
+<meta charset = "UTF-8">
+<script>
+
+/*A empresa de calçados Naiky realizou uma pesquisa com 1000 alunos em uma universidade para ajudar a 
+quantificar a produção de seu novo modelo de tênis nos diferentes tamanhos. Serão produzidos os tamanhos de 
+35 a 44. Faça um programa que leia o tamanho que cada aluno entrevistado usa e, ao final, exiba na tela o 
+percentual de alunos para cada tamanho.*/
+
+
+var tam, cont, i, perc = new Array (10);
+cont = 0;
+for (i = 0; i < 10; i++)
+	{
+		perc[i] = 0;
+	}
+while (cont < 10)
+	{
+		tam = parseInt(prompt("Informe o número do sapato que você calça:"));
+		while (tam <= 34 || tam >= 45)
+			{
+				tam = parseInt(prompt("Tamanho errado. Só são válidos valores entre 35 e 44."));
+			}
+		for (i = 0; i < 10; i++)
+			{
+				if (tam == i+35)	
+					{
+						perc[i] ++;
+					}
+			}
+		cont++;
+	}
+document.write("Relatório obtido:<br><br>");
+for (i = 0; i < 10; i++)
+	{
+		document.write("Tamanho "+(i+35)+" : percentual "+(perc[i]/cont*100)+" %.<br>");
+	}
+</script>

@@ -1,0 +1,23 @@
+<meta charset = "UTF-8">
+
+<script>
+ 
+ var a = [];
+ 
+ for(var i = 0; i <5; i++) 
+	{
+		a[i] = prompt("Informe o dado do vetor A[" + i + "].");
+	}
+ for (var i = 0; i < a.length; i++)
+	{
+		document.write (a[i] + "&nbsp&nbsp");
+	}
+ 
+ 
+ var vet = new Array(5);
+ 
+ for(let i=0; i<5; i++) {
+	vet[i] = Math.trunc(Math.random() * 60);
+	document.write(vet[i] + "<br>");
+ }
+</script>

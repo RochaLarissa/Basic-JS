@@ -1,0 +1,35 @@
+<meta charset = "UTF-8">
+<script>
+
+/*Escrever um programa que leia um vetor de 80 notas entre 0 e 10. O programa deve construir e apresentar 
+um vetor que armazene a quantidade de vezes que a nota 0 apareceu, a quantidade de vezes que a nota 1 
+apareceu e assim por diante até a nota 10.
+notas[i] = Math.round(Math.random()*10);*/
+
+var notas = new Array(80), freq = new Array(11), i, j;
+for (i = 0; i < 80; i++)
+	{
+		notas[i] = Math.trunc(Math.random()*10);
+		//notas[i] = parseInt(prompt("Informe a nota do aluno "+i));
+	}
+for (i = 0; i < 11; i++)
+	{
+		freq[i] = 0;
+	}
+for (i = 0; i < 80; i++)
+	{
+		for (j = 0; j < 11; j++)
+			{
+				if (notas[i] == j)
+					{
+						freq[j]++;
+					}
+			}
+	}
+for (j =  0; j < 11; j++)
+	{
+		document.write("A nota "+j+" aparece "+freq[j]+" vezes.<br>");
+	}
+</script>
+
+

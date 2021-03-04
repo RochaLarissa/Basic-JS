@@ -1,0 +1,26 @@
+<meta charset = "UTF-8">
+<script>
+/*Escrever um programa que leia um vetor com 100 valores. (o programa pode gerar o vetor 
+também - usar Math.random). O programa deve solicitar um valor a ser procurado dentro  do 
+vetor. Caso o valor não seja encontrado, o programa deve informar. Caso o valor seja 
+encontrado, indicar também sua posição.*/
+var v = new Array(5), j, i, aux;
+for (i = 0; i < 5; i++)
+	{
+		v[i] = Math.trunc(Math.random()*100);
+	}
+document.write("Vetor desordenado: "+v+"<br>");
+for (j = v.length-1; j > 0; j--)
+	{
+		for (i = 0; i < j; i++)
+			{
+				if (v[i]> v[i+1])
+					{
+						aux = v[i];
+						v[i] = v[i+1];
+						v[i+1] = aux;
+					}
+				document.write("Em ordenação: "+v+"<br>");
+			}
+	}
+</script>

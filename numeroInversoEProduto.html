@@ -1,0 +1,21 @@
+<meta charset = "UTF-8">
+
+<script>
+var n = prompt("Número inteiro positivo:");
+var inverso = 0;
+var digito;
+var prod = 1;
+document.write("Número lido: " + n + "<br>");
+
+while (n > 0)
+	{
+		digito = n % 10;
+		prod = prod * digito;
+		inverso = inverso * 10 + digito;
+		alert ("Inverso até o momento: " + inverso);
+		n = Math.trunc (n/10);
+	}
+document.write("Número inverso: " + inverso + "<br>");
+document.write("Produtório = " + prod);
+
+</script>

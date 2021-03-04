@@ -1,0 +1,23 @@
+<meta charset = ""UTF-8>
+<script>
+/*Escrever um programa que leia um vetor de 10 posições e o apresente. O programa deve 
+trocar o conteúdo da primeira posição com a última posição, trocar o conteúdo da segunda
+ posição com a penúltima, trocar o conteúdo da terceira posição com a antepenúltima e assim 
+ por diante. Ao final, o programa deve apresentar o vetor novamente*/
+ 
+ var vetor = new Array (10), i, j, temp;
+ 
+ for (i = 0; i < 10; i++)
+	{
+		vetor[i] = prompt("Informe o conteúdo do array [" + i + "]");
+	}
+document.write(vetor + "<br>");
+ 
+ for (i = 0; i < Math.floor(vetor.length/2); i++)
+	{
+		temp = vetor[i];
+		vetor[i] = vetor[vetor.length-1-i];
+		vetor[vetor.length-1-i] = temp;
+	}
+document.write(vetor + "<br>"); 
+ </script>

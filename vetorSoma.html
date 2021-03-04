@@ -1,0 +1,20 @@
+<meta charset = "UTF-8">
+<script>
+/*Escrever um programa que leia dois vetores de 10 posições. 
+O programa deve calcular e apresentar a soma dos elementos de cada vetor*/
+
+var i, vetorA = new Array(5) , somaA = 0;
+
+for(i = 0; i < 5; i++)
+	{
+		vetorA[i] = parseInt(prompt("Informe a informação vetor A[" + i + "]"));
+	}
+
+for (i = 0; i<5; i++)
+	{
+		somaA = somaA + vetorA[i];
+	}
+
+document.write("A soma dos elementos de A é " + somaA + ".");
+			
+</script>

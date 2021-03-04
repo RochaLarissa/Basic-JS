@@ -1,0 +1,75 @@
+<meta charset = "UTF-8">
+<script>
+/*Faça um programa para controlar o estoque de mercadorias de uma empresa. Inicialmente, o programa 
+devera¡ preencher dois vetores com dez posiçoes cada, onde o primeiro corresponde ao codigo do produto e o 
+segundo, ao total desse produto em estoque. Logo após, o programa deverá¡ ler um conjunto indeterminado
+de dados contendo o codigo de um cliente e o cÃ³digo do produto que ele deseja comprar, juntamente com a 
+quantidade. Codigo do cliente igual a zero indica fim do programa. O programa devera¡ verificar:
+
+- se o codigo do produto solicitado existe. Se existir, tentar atender ao pedido; caso contrario, 
+exibir mensagem Codigo inexistente;<br>
+- cada pedido feito por um cliente sÃ³ ser atendido integralmente. Caso isso nÃ£o seja possivel, escrever 
+a mensagem Nao temos estoque suficiente dessa mercadoria. Se puder atende-lo, escrever a mensagem 
+Pedido atendido. Obrigado e volte sempre.;
+- efetuar a atualizaçao do estoque somente se o pedido for atendido integralmente;<br>
+-No final do programa, escrever os codigos dos produtos com seus respectivos estoques atualizados.
+<br>*/
+
+
+var codprod = new Array(10), est = new Array(10), i;
+var codcl, prod, quant, achei = 0, pos;
+
+//preenchimento dos vetores de cÃ³digo do produto e estoque
+for (i = 0; i < 10; i++)
+	{
+		codprod[i] = prompt("Cadastre o código do produto "+i);
+		est[i] = prompt("Informe o estoque do produto "+i);
+	}
+	
+/*o programa devera¡ ler um conjunto indeterminado de dados contendo o codigo de um cliente e o codigo do 
+produto que ele deseja comprar, juntamente com a quantidade. Codigo do cliente igual a zero indica 
+fim do programa*/
+
+codcl = prompt("Informe o código do cliente:");
+while (codcl != 0 )
+	{
+		prod = prompt("Informe o código do produto de interesse:");
+		quant = prompt("Informe quantidade de itens do produto desejado:");
+		
+		//existência do produto
+		for (i = 0; i < 10; i++)
+			{
+				if (prod == codprod[i])
+					{
+						achei = 1;
+						pos = i;
+					}
+			}
+		
+				
+		if (achei == 0)
+			{
+				document.write("Código inexistente<br>");
+			}
+		else	//quando existe o codigo dentro do vetor
+			{	
+				//avaliação do estoque
+				if (quant <= est[pos])
+					{
+						document.write("Pedido atendido. Obrigado e volte sempre.<br>");
+						//atualização do estoque
+						est[pos] = est[pos] - quant;
+					}
+				else
+					{
+						document.write("Não temos estoque suficiente dessa mercadoria.<br>");
+					}
+			}
+		codcl = prompt("Informe o código do cliente:");
+	}
+document.write("Estoque dos produtos atualizado <br><br>");
+for (i = 0; i < 10; i++)
+	{
+		document.write("Produto "+i+": código "+codprod[i]+" - estoque de "+est[i]+" itens.<br>");
+	}
+</script>

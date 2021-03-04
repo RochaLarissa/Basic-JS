@@ -1,0 +1,37 @@
+<meta charset = "UTF-8">
+
+<script>
+/*Calcular uma serie infinita
+s = x/1! - x³/3! + x^5/5! - x^7/7! + ...*/
+
+function fat (a)
+	{
+		var f = 1, cont;
+		for (cont = 1; cont <= a; cont++)
+			{
+				f = f * cont;
+			}
+		return f;
+	}
+
+var N, x, soma, termo, cont, num, den;
+
+N = parseInt(prompt("Informe o número de termos: "));
+x = parseFloat(prompt("Informe o ângulo em radianos: "));
+soma = 0;
+termo = 1;
+cont = 0;
+
+while(cont < N)
+	{
+		cont++;
+		num = Math.pow(x, 2*cont-1);
+		den = fat (2*cont-1);
+		soma = soma + termo * num/den;
+		termo = termo * (-1);
+		
+	}
+document.write("Somatório igual a " + soma.toFixed(3) + ".");
+
+
+</script>
